@@ -1,0 +1,39 @@
+body {
+    background-color: #2b2b2b;
+    color: #ddd;
+    font-family: 'Arial', sans-serif;
+}
+
+.card {
+    background-color: #333;
+    border: none;
+}
+
+.card .form-control {
+    background-color: #444;
+    color: #ddd;
+    border: 1px solid #555;
+}
+
+.card .form-control:focus {
+    background-color: #444;
+    color: #ddd;
+    border-color: #777;
+}
+
+.card .btn-primary {
+    background-color: #0066cc;
+    border: none;
+}
+
+.card .btn-primary:hover {
+    background-color: #005bb5;
+}
+
+.footer {
+    color: #bbb;
+}
+
+.footer a {
+    color: #bbb;
+}

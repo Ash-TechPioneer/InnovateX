@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovate-X Where Imagination meets Entrepreneur</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .bg-img {
+            /* The image used */
+            background-image: url("assets/background\ image.png");
+
+            /* Control the height of the image */
+            height:calc(100vh - 56px); /* Adjust for the navbar height */
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* Add the overlay */
+            position: relative;
+            z-index: 1;
+        }
+
+        .bg-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+            z-index: -1; /* Ensure the overlay is behind the content */
+        }
+
+        
+        .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: left; /* Align text to the left */
+            padding: 20px;
+            height: 100%; /* Full height to center content vertically */
+            display: flex;
+            align-items: flex-start;
+            justify-content: center; /* Align items to the start (left) */
+            flex-direction: column;
+            margin-left: 5%; /* Move content slightly to the left */
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: fadeIn 2s forwards ease-in-out;
+        }
+        
+        .navbar {
+            /* Dark grey background color */
+            background-color: #383d43; /* Dark grey */
+            color: #ffffff; /* White text color */
+            position: sticky;
+            width: 100%;
+            top: 0;
+            z-index: 1000; /* Ensure the navbar is above other content */
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff; /* White text color for nav links */
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #f8f9fa; /* Light grey on hover */
+            font-size: 18px;
+        }
+        
+        .navbar-brand {
+            color: #ffffff; /* White text color for the brand */
+        }
+
+        .navbar-brand img {
+            max-height: 40px;
+            /* Adjust as needed */
+            margin-right: 10px;
+            
+        }
+        
+        .bg-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+            z-index: -1; /* Ensure the overlay is behind the content */
+        }
+        .btn-primary {
+            background-color: #aaadaf; /* Bootstrap's default primary color */
+            border: none; /* Remove border */
+        }
+        
+        .btn-primary:hover {
+            background-color: #39424b; /* Darker blue on hover */
+            font-size: 20px;
+        }
+        .contact-section {
+          background-image: url("assets/contactUsBackground.avif"); /* Replace with a beautiful background image */
+          background-size: cover;
+          background-position: center;
+          position: relative;
+          padding: 60px 0;
+          color: white;
+          text-align: center;
+          height: 95vh;
+      }
+      .separation {
+        height: 7px;
+        background-color: rgb(46, 44, 44);
+        position: relative;
+        z-index: 20;
+    }
+
+      .contact-section::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(44, 42, 42, 0.7); /* Dark overlay with 70% opacity */
+          z-index: -1; /* Ensure the overlay is behind the content */
+      }
+
+      .contact-section .container {
+          position: relative;
+          z-index: 1;
+      }
+
+      .contact-icons {
+          margin-bottom: 40px;
+      }
+
+      .contact-icons a {
+          color: white;
+          font-size: 30px;
+          margin: 0 10px;
+          transition: transform 0.3s;
+          border-radius: 30px;
+          padding: 6px;
+      }
+
+      .contact-icons a:hover {
+          transform: scale(1.2); /* Scale up on hover */
+      }
+
+      .contact-form {
+          background-color: rgba(255, 255, 255, 0.9);
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .contact-form:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .contact-info {
+          color: #131212;
+          margin-bottom: 30px;
+          border-radius: 50px;
+          padding: 6px;
+      }
+
+      .contact-info h3 {
+          font-size: 24px;
+          margin-bottom: 20px;
+          
+      }
+
+      .contact-info p {
+          font-size: 18px;
+          margin-bottom: 10px;
+      }
+
+      .form-control {
+          margin-bottom: 15px;
+      }
+
+      .btn-primary {
+          background-color: #6e7277; /* Bootstrap's default primary color */
+          border: none; /* Remove border */
+      }
+
+      .btn-primary:hover {
+          background-color: #1b1c1d; /* Darker blue on hover */
+      }
+
+      .row {
+          margin: 0; /* Remove margin from rows */
+      }
+
+      .col-lg-6 {
+          padding: 0 30px; /* Add padding to columns for spacing */
+         
+      }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .about-section {
+          background-image: url("assets/AboutUS\ background\ image.jpg");
+          background-size: cover;
+          background-position: center;
+          position: relative;
+          padding: 60px 0;
+          
+      }
+      .about-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7); /* Dark overlay with 70% opacity */
+        z-index: -1; /* Ensure the overlay is behind the content */
+    }
+
+      .card {
+          margin-bottom: 30px;
+          transition: transform 0.3s, box-shadow 0.3s; /* Add transition for transform and box-shadow */
+          border-radius: 20px;
+          background-color: rgb(174, 162, 162);
+      }
+
+      .card:hover {
+          transform: scale(1.05); /* Scale up the card slightly */
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+      }
+
+      .card-img-top {
+          max-height: 300px;
+          border-radius: 200px;
+          padding: 13px;
+      }
+
+      .footer {
+        background-color: #343a40; /* Dark grey */
+        color: #ffffff; /* White text color */
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+    }
+
+    
+      /* Dark mode styles */
+      .dark-mode {
+        background-color: #232020;
+        color: #ffffff;
+    }
+
+    .dark-mode .navbar {
+        background-color: #1f1f1f;
+    }
+
+    .dark-mode .bg-img::after {
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .dark-mode .content {
+        color: #ffffff;
+    }
+
+    .dark-mode .btn-primary {
+        background-color: #333;
+        color: #fff;
+    }
+
+    .dark-mode .contact-form {
+        background-color: rgba(91, 84, 84, 0.8);
+        color: #ffffff;
+    }
+
+    .dark-mode .contact-info {
+        color: #ffffff;
+    }
+
+    .dark-mode .contact-icons a {
+        color: #ffffff;
+    }
+
+    .dark-mode .about-section::after {
+        background: rgba(43, 41, 41, 0.8);
+    }
+
+    .dark-mode .card {
+        background-color: #3d3d3d;
+    }
+
+    .dark-mode .footer {
+        background-color: #1f1f1f;
+    }
+      
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="Logo">
+                Innovate-X
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav" gap="20px">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#about-section">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact-section">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html" target="_blank">Login</a>
+                  </li>
+                  <button class="toggle-button ml-auto" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                  </button>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="separation"></div>
+
+
+          
+
+    </header>
+    <!-------------------------------------Main Tag --------------------------------->
+    <main>
+        <div class="bg-img">
+            <div class="content">
+              <h1>Welcome to Our Website</h1>
+              <p>Here is some introductory text about the website.</p>
+              <button class="btn btn-primary">Learn More</button>
+            </div>
+          </div>
+      </main>
+      <div class="separation"></div>
+    <!-------------------------------Section About Us --------------------------------->
+
+    <section class="about-section" id="about-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2>About Us</h2>
+            <p>Meet our core team members</p>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Member 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img src="assets/AshleshaPHOTO.jpg" class="card-img-top" alt="Member 1">
+              <div class="card-body">
+                <h5 class="card-title">Member 1</h5>
+                <p class="card-text">Position</p>
+                <p class="card-text">Brief information about Member 1.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Member 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img src="path/to/member2.jpg" class="card-img-top" alt="Member 2">
+              <div class="card-body">
+                <h5 class="card-title">Member 2</h5>
+                <p class="card-text">Position</p>
+                <p class="card-text">Brief information about Member 2.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Member 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img src="path/to/member3.jpg" class="card-img-top" alt="Member 3">
+              <div class="card-body">
+                <h5 class="card-title">Member 3</h5>
+                <p class="card-text">Position</p>
+                <p class="card-text">Brief information about Member 3.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Member 4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img src="path/to/member4.jpg" class="card-img-top" alt="Member 4">
+              <div class="card-body">
+                <h5 class="card-title">Member 4</h5>
+                <p class="card-text">Position</p>
+                <p class="card-text">Brief information about Member 4.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Member 5 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img src="path/to/member5.jpg" class="card-img-top" alt="Member 5">
+              <div class="card-body">
+                <h5 class="card-title">Member 5</h5>
+                <p class="card-text">Position</p>
+                <p class="card-text">Brief information about Member 5.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Member 6 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img src="path/to/member6.jpg" class="card-img-top" alt="Member 6">
+              <div class="card-body">
+                <h5 class="card-title">Member 6</h5>
+                <p class="card-text">Position</p>
+                <p class="card-text">Brief information about Member 6.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Member 7 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img src="path/to/member7.jpg" class="card-img-top" alt="Member 7">
+              <div class="card-body">
+                <h5 class="card-title">Member 7</h5>
+                <p class="card-text">Position</p>
+                <p class="card-text">Brief information about Member 7.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Member 8 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img src="path/to/member8.jpg" class="card-img-top" alt="Member 8">
+              <div class="card-body">
+                <h5 class="card-title">Member 8</h5>
+                <p class="card-text">Position</p>
+                <p class="card-text">Brief information about Member 8.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Member 9 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img src="path/to/member9.jpg" class="card-img-top" alt="Member 9">
+              <div class="card-body">
+                <h5 class="card-title">Member 9</h5>
+                <p class="card-text">Position</p>
+                <p class="card-text">Brief information about Member 9.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="separation"></div>
+    
+    <!--------------------------------------------Contact Us page---------------------------------------->
+    <section class="contact-section" id="contact-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="contact-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="contact-info" >
+              <h3>Contact Our Core Members</h3>
+              <p>John Doe</p>
+              <p>Email: <a href="mailto:john@example.com">john@example.com</a></p>
+              <p>Phone: +1 234 567 890</p>
+              <p>Jane Smith</p>
+              <p>Email: <a href="mailto:jane@example.com">jane@example.com</a></p>
+              <p>Phone: +1 234 567 891</p>
+              <p>Bob Johnson</p>
+              <p>Email: <a href="mailto:bob@example.com">bob@example.com</a></p>
+              <p>Phone: +1 234 567 892</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-form">
+              <h3>Get in Touch</h3>
+              <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Contact Number">
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <p>&copy; 2024 Ashlesha Hedaoo</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqk+d9P/5jJQXWQI5qDkPHaJ5vHxKeTDM9/6yTtw/zQy1A1vyFoYo"
+        crossorigin="anonymous"></script>
+        <script>
+          document.getElementById('theme-toggle').addEventListener('click', function() {
+              document.body.classList.toggle('dark-mode');
+              document.querySelector('.navbar').classList.toggle('dark-mode');
+              document.querySelector('.contact-form').classList.toggle('dark-mode');
+              document.querySelector('.contact-info').classList.toggle('dark-mode');
+              document.querySelectorAll('.contact-icons a').forEach(function(icon) {
+                  icon.classList.toggle('dark-mode');
+              });
+      
+              // Change the icon based on the current mode
+              let icon = document.querySelector('#theme-toggle i');
+              if (document.body.classList.contains('dark-mode')) {
+                  icon.classList.remove('fa-moon');
+                  icon.classList.add('fa-sun');
+              } else {
+                  icon.classList.remove('fa-sun');
+                  icon.classList.add('fa-moon');
+              }
+          });
+          </script>
+          <script>
+            const toggleButton = document.getElementById('darkModeToggle');
+            const body = document.body;
+    
+            toggleButton.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+            });
+        </script>
+        <div id="root"></div>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>

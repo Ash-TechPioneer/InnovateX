@@ -1,0 +1,35 @@
+mkdir fullstack-app
+cd fullstack-app
+npm init -y
+
+
+// making new path
+New-Item -Path . -Name "server.js" -ItemType "File"
+New-Item -Path . -Name "Login.js" -ItemType "File"
+New-Item -Path . -Name "Home.js" -ItemType "File"
+New-Item -Path . -Name "ContactUs.js" -ItemType "File"
+New-Item -Path . -Name "Navbar.js" -ItemType "File"
+New-Item -Path . -Name "styles.css" -ItemType "File"
+New-Item -Path . -Name ".env" -ItemType "File"
+New-Item -Path . -Name "auth.js" -ItemType "File"
+
+
+---------------------------------------package.json------------------------------------------
+{
+  "name": "fullstack-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.5"
+  }
+}
